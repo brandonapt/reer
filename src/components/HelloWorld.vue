@@ -1,58 +1,229 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+  <div>
+    <v-row class="text-center">
+      <v-col cols="12">
+        <v-img
+          :src="require('../assets/sunny.png')"
+          class="my-3 mt-15"
+          contain
+          height="200"
+        />
+      </v-col>
+
+      <v-col class="mb-4">
+        <h1 class="display-2 font-weight-bold mb-3">welcome to reer</h1>
+      </v-col>
+    </v-row>
+    <v-row class="mx-auto buttons">
+      <v-btn
+        v-bind:disabled="extended"
+        v-bind:loading="loading1"
+        @click="extend"
+        color="blue"
+        class="mr-2"
+        >Extend</v-btn
+      >
+      <v-btn
+        v-bind:disabled="!extended"
+        v-bind:loading="loading2"
+        @click="retract"
+        color="orange"
+        >Retract</v-btn
+      >
+    </v-row>
+    <div class="cutpowerdiv">
+      <v-btn
+        class="cutpower"
+        block
+        @click="cut"
+        v-bind:disabled="!loading1 && !loading2"
+        color="red"
+        >CUT POWER</v-btn
+      >
+    </div>
+    <v-divider class="mt-7 mx-15"></v-divider>
+    <v-slider
+      dense
+      class="secondslider"
+      :hint="'Seconds (Currently ' + seconds + ')'"
+      max="30"
+      min="1"
+      thumb-label="always"
+      persistent-hint
+      v-model="newSeconds"
+    ></v-slider>
+    <v-btn
+      @click="setSeconds"
+      color="green"
+      v-bind:loading="loading3"
+      class="setsecondsbutton"
+      >Set Seconds</v-btn
+    >
+    <v-snackbar v-model="snackbar" :timeout="timeout" :color="color">
+      {{ text }}
+      <template v-slot:action="{ attrs }">
+        <v-btn text v-bind="attrs" @click="snackbar = false"> Close </v-btn>
+      </template>
+    </v-snackbar>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
+  name: "HelloWorld",
+  mounted: async function () {
+    const response = await this.$http.get("http://192.168.86.51:3000/extended");
+    this.extended = response.data.extended;
+    const res2 = await this.$http.get("http://192.168.86.51:3000/seconds");
+    this.seconds = res2.data.seconds;
+    this.newSeconds = this.seconds;
+  },
+  methods: {
+    async extend() {
+      if (this.loading1 == true || this.loading2 == true) return;
+      this.extended = true;
+      this.text = "Extending...";
+      this.color = "green";
+      this.snackbar = true;
+      this.loading1 = true;
+      await this.$http.post("http://192.168.86.51:3000/extend");
+      this.text = "Extended!";
+      this.color = "green";
+      this.snackbar = true;
+      this.loading1 = false;
+    },
+    async setSeconds() {
+      this.text = "Setting seconds...";
+      this.color = "green";
+      this.snackbar = true;
+      this.loading3 = true;
+      await this.$http.post(
+        "http://192.168.86.51:3000/setseconds/" + this.newSeconds
+      );
+      this.text = "Seconds set!";
+      this.color = "green";
+      this.snackbar = true;
+      this.seconds = this.newSeconds;
+      this.loading3 = false;
+      this.seconds = this.newSeconds;
+    },
+    async cut() {
+      this.text = "Cutting power...";
+      this.color = "red";
+      this.snackbar = true;
+      await this.$http.post("http://192.168.86.51:3000/cut");
+      this.text = "Power cut!";
+      this.color = "red";
+      this.snackbar = true;
+      this.loading2 = false
+      this.loading1 = false
+    },
+    async retract() {
+      if (this.loading1 == true || this.loading2 == true) return;
+      this.extended = false;
+      this.text = "Retracting...";
+      this.color = "green";
+      this.snackbar = true;
+      this.loading2 = true;
+      await this.$http.post("http://192.168.86.51:3000/retract");
+      this.text = "Extended!";
+      this.color = "green";
+      this.snackbar = true;
+      this.loading2 = false;
+    },
+  },
+  data: () => ({
+    extended: false,
+    loading1: false,
+    loading2: false,
+    seconds: null,
+    newSeconds: null,
+    snackbar: false,
+    loading3: false,
+    text: "Extending...",
+    timeout: 3000,
+    color: "success",
+    ecosystem: [
+      {
+        text: "vuetify-loader",
+        href: "https://github.com/vuetifyjs/vuetify-loader",
+      },
+      {
+        text: "github",
+        href: "https://github.com/vuetifyjs/vuetify",
+      },
+      {
+        text: "awesome-vuetify",
+        href: "https://github.com/vuetifyjs/awesome-vuetify",
+      },
+    ],
+    importantLinks: [
+      {
+        text: "Documentation",
+        href: "https://vuetifyjs.com",
+      },
+      {
+        text: "Chat",
+        href: "https://community.vuetifyjs.com",
+      },
+      {
+        text: "Made with Vuetify",
+        href: "https://madewithvuejs.com/vuetify",
+      },
+      {
+        text: "Twitter",
+        href: "https://twitter.com/vuetifyjs",
+      },
+      {
+        text: "Articles",
+        href: "https://medium.com/vuetify",
+      },
+    ],
+    whatsNext: [
+      {
+        text: "Explore components",
+        href: "https://vuetifyjs.com/components/api-explorer",
+      },
+      {
+        text: "Select a layout",
+        href: "https://vuetifyjs.com/getting-started/pre-made-layouts",
+      },
+      {
+        text: "Frequently Asked Questions",
+        href: "https://vuetifyjs.com/getting-started/frequently-asked-questions",
+      },
+    ],
+  }),
+};
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.buttons {
+  display: flex;
+  justify-content: center;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.secondslider {
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.setsecondsbutton {
+  display: block;
+  margin: auto;
 }
-a {
-  color: #42b983;
+
+.cutpower {
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width: 20px;
+}
+
+.cutpowerdiv {
+  margin: 0 auto;
+  width: 15%;
+  text-align: center;
 }
 </style>
