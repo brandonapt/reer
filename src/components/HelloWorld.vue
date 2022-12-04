@@ -12,8 +12,25 @@
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">welcome to reer</h1>
+        <p @click="showipchanger = !showipchanger" v-ripple class="mb-n2 ipis">
+          backend ip: {{ $store.state.ip }}
+        </p>
       </v-col>
     </v-row>
+
+    <v-expand-transition>
+      <v-text-field
+        v-model="newip"
+        v-show="showipchanger"
+        outlined
+        dense
+        class="ipchanger"
+        label="new ip"
+        append-icon="mdi-arrow-right-thick"
+        @click:append="setIp"
+      ></v-text-field>
+    </v-expand-transition>
+
     <v-row class="mx-auto buttons">
       <v-btn
         v-bind:disabled="extended"
@@ -72,9 +89,9 @@
 export default {
   name: "HelloWorld",
   mounted: async function () {
-    const response = await this.$http.get("http://192.168.86.51:3000/extended");
+    const response = await this.$http.get(this.$store.state.ip + "/extended");
     this.extended = response.data.extended;
-    const res2 = await this.$http.get("http://192.168.86.51:3000/seconds");
+    const res2 = await this.$http.get(this.$store.state.ip + "/seconds");
     this.seconds = res2.data.seconds;
     this.newSeconds = this.seconds;
   },
@@ -86,7 +103,7 @@ export default {
       this.color = "green";
       this.snackbar = true;
       this.loading1 = true;
-      await this.$http.post("http://192.168.86.51:3000/extend");
+      await this.$http.post(this.$store.state.ip + "/extend");
       this.text = "Extended!";
       this.color = "green";
       this.snackbar = true;
@@ -98,7 +115,7 @@ export default {
       this.snackbar = true;
       this.loading3 = true;
       await this.$http.post(
-        "http://192.168.86.51:3000/setseconds/" + this.newSeconds
+        this.$store.state.ip + "/setseconds/" + this.newSeconds
       );
       this.text = "Seconds set!";
       this.color = "green";
@@ -111,12 +128,36 @@ export default {
       this.text = "Cutting power...";
       this.color = "red";
       this.snackbar = true;
-      await this.$http.post("http://192.168.86.51:3000/cut");
+      await this.$http.post(this.$store.state.ip + "/cut");
       this.text = "Power cut!";
       this.color = "red";
       this.snackbar = true;
-      this.loading2 = false
-      this.loading1 = false
+      this.loading2 = false;
+      this.loading1 = false;
+    },
+    async setIp() {
+      let res;
+      try {
+        res = await this.$http.get(this.newip + "/extended");
+      } catch (e) {
+        this.text = "Invalid IP!";
+        this.color = "red";
+        this.snackbar = true;
+        return;
+      }
+      if (!res?.data?.success == true) {
+        this.text = "IP set!";
+        this.color = "green";
+        this.snackbar = true;
+        this.$store.commit("setIp", this.newip);
+        this.showipchanger = false;
+        return;
+      } else {
+        this.text = "invalid ip";
+        this.color = "red";
+        this.snackbar = true;
+        return;
+      }
     },
     async retract() {
       if (this.loading1 == true || this.loading2 == true) return;
@@ -125,7 +166,7 @@ export default {
       this.color = "green";
       this.snackbar = true;
       this.loading2 = true;
-      await this.$http.post("http://192.168.86.51:3000/retract");
+      await this.$http.post(this.$store.state.ip + "/retract");
       this.text = "Extended!";
       this.color = "green";
       this.snackbar = true;
@@ -140,7 +181,9 @@ export default {
     newSeconds: null,
     snackbar: false,
     loading3: false,
+    showipchanger: false,
     text: "Extending...",
+    newip: "",
     timeout: 3000,
     color: "success",
     ecosystem: [
@@ -211,6 +254,21 @@ export default {
 .setsecondsbutton {
   display: block;
   margin: auto;
+}
+
+.ipis {
+  cursor: pointer;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.ipchanger {
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 200px;
 }
 
 .cutpower {
