@@ -53,7 +53,7 @@ await res.json({ seconds: seconds })
 
 app.post('/extend', async (req,res) => {
 updateSeconds()
-motor.servoWrite(2250)
+motor.servoWrite(750)
 setTimeout(function () {
 motor.servoWrite(0)
 extended = true
@@ -63,7 +63,7 @@ res.json({ extended: true, success: true })
 
 app.post('/retract', async (req,res) => {
 updateSeconds()
-motor.servoWrite(750)
+motor.servoWrite(2250)
 setTimeout(function () {
 motor.servoWrite(0)
 extended = false
