@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A0577519295606A40006B0EA /* Reer_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0577518295606A40006B0EA /* Reer_WatchApp.swift */; };
+		A057751B295606A40006B0EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A057751A295606A40006B0EA /* ContentView.swift */; };
+		A057751D295606A60006B0EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A057751C295606A60006B0EA /* Assets.xcassets */; };
+		A0577520295606A60006B0EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A057751F295606A60006B0EA /* Preview Assets.xcassets */; };
+		A0577523295606A60006B0EA /* Reer Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A0577516295606A40006B0EA /* Reer Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A0CB9A3D2955F3CE0037C012 /* reerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CB9A3C2955F3CE0037C012 /* reerApp.swift */; };
+		A0CB9A3F2955F3CE0037C012 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CB9A3E2955F3CE0037C012 /* ContentView.swift */; };
+		A0CB9A412955F3D00037C012 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CB9A402955F3D00037C012 /* Assets.xcassets */; };
+		A0CB9A442955F3D00037C012 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CB9A432955F3D00037C012 /* Preview Assets.xcassets */; };
+		A0CB9A4B2955FA4E0037C012 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CB9A4A2955FA4E0037C012 /* Launch Screen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A0577521295606A60006B0EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0CB9A312955F3CE0037C012 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0577515295606A40006B0EA;
+			remoteInfo = "Reer Watch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A0577524295606A70006B0EA /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				A0577523295606A60006B0EA /* Reer Watch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A0577516295606A40006B0EA /* Reer Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reer Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0577518295606A40006B0EA /* Reer_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reer_WatchApp.swift; sourceTree = "<group>"; };
+		A057751A295606A40006B0EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A057751C295606A60006B0EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A057751F295606A60006B0EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A0CB9A392955F3CE0037C012 /* reer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0CB9A3C2955F3CE0037C012 /* reerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reerApp.swift; sourceTree = "<group>"; };
+		A0CB9A3E2955F3CE0037C012 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A0CB9A402955F3D00037C012 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A0CB9A432955F3D00037C012 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A0CB9A4A2955FA4E0037C012 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A0577513295606A40006B0EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0CB9A362955F3CE0037C012 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A0577517295606A40006B0EA /* Reer Watch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				A0577518295606A40006B0EA /* Reer_WatchApp.swift */,
+				A057751A295606A40006B0EA /* ContentView.swift */,
+				A057751C295606A60006B0EA /* Assets.xcassets */,
+				A057751E295606A60006B0EA /* Preview Content */,
+			);
+			path = "Reer Watch Watch App";
+			sourceTree = "<group>";
+		};
+		A057751E295606A60006B0EA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A057751F295606A60006B0EA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A0CB9A302955F3CE0037C012 = {
+			isa = PBXGroup;
+			children = (
+				A0CB9A4A2955FA4E0037C012 /* Launch Screen.storyboard */,
+				A0CB9A3B2955F3CE0037C012 /* reer */,
+				A0577517295606A40006B0EA /* Reer Watch Watch App */,
+				A0CB9A3A2955F3CE0037C012 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A0CB9A3A2955F3CE0037C012 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A0CB9A392955F3CE0037C012 /* reer.app */,
+				A0577516295606A40006B0EA /* Reer Watch Watch App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A0CB9A3B2955F3CE0037C012 /* reer */ = {
+			isa = PBXGroup;
+			children = (
+				A0CB9A3C2955F3CE0037C012 /* reerApp.swift */,
+				A0CB9A3E2955F3CE0037C012 /* ContentView.swift */,
+				A0CB9A402955F3D00037C012 /* Assets.xcassets */,
+				A0CB9A422955F3D00037C012 /* Preview Content */,
+			);
+			path = reer;
+			sourceTree = "<group>";
+		};
+		A0CB9A422955F3D00037C012 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A0CB9A432955F3D00037C012 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A0577515295606A40006B0EA /* Reer Watch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0577527295606A70006B0EA /* Build configuration list for PBXNativeTarget "Reer Watch Watch App" */;
+			buildPhases = (
+				A0577512295606A40006B0EA /* Sources */,
+				A0577513295606A40006B0EA /* Frameworks */,
+				A0577514295606A40006B0EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Reer Watch Watch App";
+			productName = "Reer Watch Watch App";
+			productReference = A0577516295606A40006B0EA /* Reer Watch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A0CB9A382955F3CE0037C012 /* reer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0CB9A472955F3D00037C012 /* Build configuration list for PBXNativeTarget "reer" */;
+			buildPhases = (
+				A0CB9A352955F3CE0037C012 /* Sources */,
+				A0CB9A362955F3CE0037C012 /* Frameworks */,
+				A0CB9A372955F3CE0037C012 /* Resources */,
+				A0577524295606A70006B0EA /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0577522295606A60006B0EA /* PBXTargetDependency */,
+			);
+			name = reer;
+			productName = reer;
+			productReference = A0CB9A392955F3CE0037C012 /* reer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A0CB9A312955F3CE0037C012 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					A0577515295606A40006B0EA = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					A0CB9A382955F3CE0037C012 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = A0CB9A342955F3CE0037C012 /* Build configuration list for PBXProject "reer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A0CB9A302955F3CE0037C012;
+			productRefGroup = A0CB9A3A2955F3CE0037C012 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A0CB9A382955F3CE0037C012 /* reer */,
+				A0577515295606A40006B0EA /* Reer Watch Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A0577514295606A40006B0EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0577520295606A60006B0EA /* Preview Assets.xcassets in Resources */,
+				A057751D295606A60006B0EA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0CB9A372955F3CE0037C012 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0CB9A4B2955FA4E0037C012 /* Launch Screen.storyboard in Resources */,
+				A0CB9A442955F3D00037C012 /* Preview Assets.xcassets in Resources */,
+				A0CB9A412955F3D00037C012 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A0577512295606A40006B0EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A057751B295606A40006B0EA /* ContentView.swift in Sources */,
+				A0577519295606A40006B0EA /* Reer_WatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0CB9A352955F3CE0037C012 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0CB9A3F2955F3CE0037C012 /* ContentView.swift in Sources */,
+				A0CB9A3D2955F3CE0037C012 /* reerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A0577522295606A60006B0EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0577515295606A40006B0EA /* Reer Watch Watch App */;
+			targetProxy = A0577521295606A60006B0EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A0577525295606A70006B0EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Reer Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = JPWLY45XUP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Reer Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = org.wharfrats.reermobile;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.wharfrats.reermobile.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.1;
+			};
+			name = Debug;
+		};
+		A0577526295606A70006B0EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Reer Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = JPWLY45XUP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Reer Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = org.wharfrats.reermobile;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.wharfrats.reermobile.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.1;
+			};
+			name = Release;
+		};
+		A0CB9A452955F3D00037C012 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A0CB9A462955F3D00037C012 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A0CB9A482955F3D00037C012 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"reer/Preview Content\"";
+				DEVELOPMENT_TEAM = JPWLY45XUP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = REER;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.wharfrats.reermobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A0CB9A492955F3D00037C012 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"reer/Preview Content\"";
+				DEVELOPMENT_TEAM = JPWLY45XUP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = REER;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.wharfrats.reermobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A0577527295606A70006B0EA /* Build configuration list for PBXNativeTarget "Reer Watch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0577525295606A70006B0EA /* Debug */,
+				A0577526295606A70006B0EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0CB9A342955F3CE0037C012 /* Build configuration list for PBXProject "reer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0CB9A452955F3D00037C012 /* Debug */,
+				A0CB9A462955F3D00037C012 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0CB9A472955F3D00037C012 /* Build configuration list for PBXNativeTarget "reer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0CB9A482955F3D00037C012 /* Debug */,
+				A0CB9A492955F3D00037C012 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A0CB9A312955F3CE0037C012 /* Project object */;
+}
